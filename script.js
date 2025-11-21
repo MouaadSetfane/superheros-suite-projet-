@@ -68,11 +68,31 @@ async function supprimerHeros(id) {
     console.log(`Heros avec ID ${id} supprime.`);
 }
 
+// Nouvelle fonction de recherche
+async function rechercherHeroes(terme) {
+    const tousLesHeroes = await obtenirHeroes();
+    
+    if (!terme || terme.trim() === "") {
+        afficherHeroes(tousLesHeroes);
+        return;
+    }
+
+    const termeMin = terme.toLowerCase();
+
+    const heroesFiltres = tousLesHeroes.filter(heros => 
+        heros.nom.toLowerCase().includes(termeMin) || 
+        heros.pouvoir.toLowerCase().includes(termeMin)
+    );
+
+    afficherHeroes(heroesFiltres);
+    console.log(`Recherche effectuee pour "${terme}". ${heroesFiltres.length} resultat(s) trouve(s).`);
+}
 
 document.addEventListener('DOMContentLoaded', async () => {
     const formulaire = document.getElementById('formulaire-ajout-heros');
     const listeConteneur = document.getElementById('liste-des-heros');
-     const messageConfirmation = document.getElementById('message-confirmation');
+    const messageConfirmation = document.getElementById('message-confirmation');
+    const champRecherche = document.getElementById('champ-recherche');
     
     const initialHeroes = await obtenirHeroes();
     afficherHeroes(initialHeroes);
@@ -115,6 +135,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                 supprimerHeros(idASupprimer);
             }
         }
+    });
+
+    // Logique de recherche
+    champRecherche.addEventListener('input', (e) => {
+        rechercherHeroes(e.target.value);
     });
 
 });
