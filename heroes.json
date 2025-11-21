@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nom": "Super Vitesse",
+    "pouvoir": "Course supersonique",
+    "description": "Le héros le plus rapide de la galaxie."
+  },
+  {
+    "id": 2,
+    "nom": "Force Titanique",
+    "pouvoir": "Force surhumaine",
+    "description": "Peut soulever des montagnes."
+  },
+  {
+    "id": 3,
+    "nom": "L'Invisible",
+    "pouvoir": "Invisibilité",
+    "description": "Un maître de l'infiltration et de la discrétion."
+  }
+]
