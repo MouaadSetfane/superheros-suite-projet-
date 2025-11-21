@@ -56,6 +56,18 @@ function afficherHeroes(heroes) {
     console.log("Interface utilisateur mise a jour avec", heroes.length, "heros.");
 }
 
+async function supprimerHeros(id) {
+    const herosActuels = await obtenirHeroes();
+    
+    const nouvelleListe = herosActuels.filter(h => h.id !== id);
+    
+    sauvegarderHeroes(nouvelleListe);
+    
+    afficherHeroes(nouvelleListe);
+
+    console.log(`Heros avec ID ${id} supprime.`);
+}
+
 
 document.addEventListener('DOMContentLoaded', async () => {
     const formulaire = document.getElementById('formulaire-ajout-heros');
@@ -94,4 +106,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             messageConfirmation.style.display = 'none';
         }, 3000); 
     });
+
+    // Logique de suppression
+    listeConteneur.addEventListener('click', (e) => {
+        if (e.target.classList.contains('btn-supprimer')) {
+            const idASupprimer = parseInt(e.target.dataset.id);
+            if (confirm(`Voulez-vous vraiment supprimer le heros ID ${idASupprimer}?`)) {
+                supprimerHeros(idASupprimer);
+            }
+        }
+    });
+
 });
