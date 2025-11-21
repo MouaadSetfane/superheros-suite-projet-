@@ -1,3 +1,4 @@
+const CLE_STORAGE_HEROS = 'listeHeroes'; 
 
 function sauvegarderHeroes(heroes) {
     localStorage.setItem(CLE_STORAGE_HEROS, JSON.stringify(heroes));
@@ -26,3 +27,39 @@ async function obtenirHeroes() {
         return []; 
     }
 }
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const formulaire = document.getElementById('formulaire-ajout-heros');
+    
+    const initialHeroes = await obtenirHeroes();
+    
+    console.log("Liste initiale des heros chargee:", initialHeroes);
+    
+    // Logique d'ajout
+    formulaire.addEventListener('submit', async (e) => {
+        e.preventDefault(); 
+        
+        const heroesActuels = await obtenirHeroes();
+        
+        const maxId = heroesActuels.length > 0 ? Math.max(...heroesActuels.map(h => h.id)) : 0;
+        const nouvelId = maxId + 1;
+        
+        const nouveauHeros = {
+            id: nouvelId, 
+            nom: document.getElementById('nom').value,
+            pouvoir: document.getElementById('pouvoir').value,
+            description: document.getElementById('description').value
+        };
+
+        heroesActuels.push(nouveauHeros);
+        sauvegarderHeroes(heroesActuels);
+        
+        console.log("Nouveau heros ajoute:", nouveauHeros);
+        
+        formulaire.reset(); 
+        messageConfirmation.style.display = 'block';
+        setTimeout(() => {
+            messageConfirmation.style.display = 'none';
+        }, 3000); 
+    });
+});
