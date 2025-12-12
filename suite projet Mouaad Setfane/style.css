@@ -1,0 +1,198 @@
+
+        :root {
+            --comic-red: #E74C3C;
+            --comic-yellow: #F1C40F;
+            --comic-blue: #3498DB;
+            --comic-green: #2ECC71;
+            --comic-black: #2C3E50; 
+            --comic-paper: #FDFEFE; 
+        }
+
+        body {
+            font-family: 'Comic Neue', cursive;
+            background-color: var(--comic-yellow);
+            
+            background-image: radial-gradient(var(--comic-black) 10%, transparent 10%),
+                              radial-gradient(var(--comic-black) 10%, transparent 10%);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            
+            color: var(--comic-black);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        section {
+            background-color: var(--comic-paper);
+            border: 5px solid var(--comic-black);
+            padding: 25px;
+            margin: 20px 0;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 10px 10px 0px var(--comic-black); 
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        section:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 13px 13px 0px var(--comic-black);
+        }
+       
+        #recherche-heros {
+             max-width: 500px; 
+        }
+
+
+
+        h1, h2 {
+            font-family: 'Permanent Marker', cursive;
+            color: var(--comic-red);
+            text-shadow: 3px 3px 0px var(--comic-yellow); 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            transform: rotate(-1deg);
+            transition: transform 0.2s;
+        }
+
+        h2 {
+            color: var(--comic-blue);
+            text-shadow: 2px 2px 0px var(--comic-green);
+            margin-top: 0;
+        }
+      
+        label {
+            font-family: 'Comic Neue', cursive;
+            font-weight: bold;
+            display: block;
+            margin-top: 12px;
+            font-size: 1.1em;
+            color: var(--comic-black);
+        }
+
+        input[type="text"], textarea {
+            font-family: 'Comic Neue', cursive;
+            border: 3px solid var(--comic-black);
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            border-radius: 5px 15px 5px 15px; 
+            transition: box-shadow 0.2s;
+            background-color: var(--comic-paper);
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px var(--comic-red); 
+        }
+        
+        #champ-recherche {
+            border-color: var(--comic-blue);
+        }
+
+
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 1.5em;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            
+            background-color: var(--comic-red);
+            color: var(--comic-paper);
+            border: 4px solid var(--comic-black);
+            border-radius: 30px 15px 30px 15px;
+            box-shadow: 5px 5px 0px var(--comic-black);
+            
+            transition: all 0.1s;
+            text-transform: uppercase;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #C0392B; 
+            box-shadow: 3px 3px 0px var(--comic-black);
+            transform: translate(2px, 2px);
+        }
+        
+     
+        #message-confirmation {
+            font-family: 'Comic Neue', cursive;
+            background-color: var(--comic-green); 
+            border: 3px solid var(--comic-black);
+            color: var(--comic-black) !important;
+            font-weight: bold;
+            border-radius: 20px;
+            padding: 10px 15px;
+            margin-top: 15px;
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-card {
+           
+            border: 3px solid var(--comic-black);
+            background-color: #ffeaa7; 
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px 25px 10px 25px; 
+            box-shadow: 5px 5px 0px var(--comic-blue); 
+            transition: all 0.3s ease;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-5px); 
+            box-shadow: 8px 8px 0px var(--comic-blue);
+        }
+
+        .hero-card h3 {
+            font-family: 'Permanent Marker', cursive;
+            color: var(--comic-blue); 
+            text-shadow: 1px 1px 0px var(--comic-paper);
+            margin-top: 0;
+            margin-bottom: 5px;
+            text-align: left;
+            transform: none; 
+        }
+        
+        .hero-card p {
+            font-size: 0.95em;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .hero-card button {
+            font-family: 'Comic Neue', cursive;
+            font-weight: bold;
+            padding: 8px 15px;
+            margin-right: 10px;
+            margin-top: 10px;
+            border: 3px solid var(--comic-black);
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 3px 3px 0px var(--comic-black);
+            transition: all 0.1s;
+        }
+        
+        .hero-card button:hover {
+            transform: translate(1px, 1px);
+            box-shadow: 2px 2px 0px var(--comic-black);
+        }
+
+        .btn-modifier {
+            background-color: var(--comic-green); 
+            color: var(--comic-black);
+        }
+
+        .btn-supprimer {
+            background-color: var(--comic-red); 
+            color: var(--comic-paper);
+        }
