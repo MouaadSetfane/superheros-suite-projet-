@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Héros - POW !</title>
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section id="ajout-heros">
+        <h2>Ajouter un Nouveau Héros</h2>
+        <form id="formulaire-ajout-heros">
+        
+            <label for="nom">Nom du Héros :</label>
+            <input type="text" id="nom" name="nom" required>
+            
+            <label for="pouvoir">Pouvoir Principal :</label>
+            <input type="text" id="pouvoir" name="pouvoir" required>
+
+            <label for="description">Description :</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+            
+            <button type="submit">Enregistrer le Héros</button>
+            
+            <!-- Le message de confirmation est maintenant une bulle verte -->
+            <p id="message-confirmation" style="display: none;">Héros ajouté avec succès !</p>
+            
+        </form>
+    </section>
+
+    <section id="recherche-heros">
+        <h2>Rechercher un Héros</h2>
+        <input type="text" id="champ-recherche" placeholder="Entrez le nom ou le pouvoir...">
+    </section>
+
+    <section id="liste-des-heros">
+        <h2>Liste de nos Héros</h2>
+        <!-- La liste des héros s'affichera ici -->
+        <p>Aucun héros n'a encore été enregistré. Créez-en un, vite ! ZAP !</p>
+    </section>
+    
+    <!-- NOTE: J'ai gardé la balise script pour indiquer où le JS irait. -->
+    <!-- Le code JavaScript n'est pas inclus ici car il était référencé dans un fichier externe. -->
+    <script src="script.js"></script> 
+</body>
+</html>*
